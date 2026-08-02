@@ -807,6 +807,22 @@ section[id] {
   display: block;
 }
 
+/* AI Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
 .project-visual-compact img {
   max-height: 260px;
   object-position: center 40%;
