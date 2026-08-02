@@ -21,6 +21,33 @@ Checkpoint, LoRA, VAE, Prompt 조합에 따른 결과 변화를 분석하고
 Batch 생성, 모델 관리, 이미지 관리 환경을 구성하며
 실제 콘텐츠 제작 과정에 적용했습니다.
 
+## 생성형 AI Workflow 연구 배경
+
+초기에는 Stable Diffusion 1.5 기반 환경에서 AI 이미지 제작을 시작하며 
+생성 모델의 특성과 한계를 경험했습니다.
+
+당시 모델은 현재의 생성형 AI와 비교하여 자연어 기반 표현력과 
+세부적인 이미지 제어 능력이 제한적이었으며, 원하는 결과를 얻기 위해 
+복잡한 Prompt 구성과 가중치 조정이 필요했습니다.
+
+이후 SDXL 계열 모델과 ComfyUI 등 다양한 생성 환경을 테스트하며 
+AI 이미지 제작 Workflow 개선 방향을 연구했습니다.
+
+초기 ComfyUI는 높은 자유도를 제공했지만 노드 기반 구조와 설정 관리가 
+복잡하여 학습 과정에서 어려움을 경험했습니다.
+
+이후 Stable Diffusion WebUI 기반 사용성을 유지하면서 SDXL 모델을 활용할 수 있는 
+Forge 환경을 구축하여 보다 효율적인 생성 Workflow를 연구했습니다.
+
+특히 Illustrious 계열 모델을 활용하면서 향상된 자연어 이해와 표현력을 경험했고,
+Checkpoint, LoRA, VAE 조합 및 Prompt Engineering을 통한 결과 비교 분석을 진행했습니다.
+
+이후 제작 결과물을 Pixiv에 적용하여 사용자 반응과 콘텐츠 수요를 분석했고,
+수요 대비 공급이 적은 버튜버 관련 콘텐츠를 중심으로 운영 방향을 설정했습니다.
+
+약 1년 반 동안 지속적인 제작과 분석을 통해 4,900명 이상의 팔로워를 확보하며
+생성형 AI 기술을 실제 콘텐츠 제작 Workflow로 발전시키는 경험을 쌓았습니다.
+
 ## 주요 프로젝트
 
 - **AI 기반 디지털 콘텐츠 제작 및 글로벌 플랫폼 운영**
@@ -72,6 +99,54 @@ With the rapid development of generative AI technology, various models and tools
 Rather than focusing only on image generation, this project aims to build and optimize a local Stable Diffusion-based environment while analyzing the effects of Checkpoints, LoRAs, VAEs, and prompt combinations.
 
 The workflow was also improved through batch generation, model management, and asset organization methods to apply generative AI technology to practical content production.
+
+## Background of Generative AI Workflow Research
+
+I started AI image generation using Stable Diffusion 1.5,
+mainly focusing on realistic image generation and digital content creation.
+
+At that time, compared to current generative AI models,
+natural language understanding and image expression capabilities were limited.
+Creating specific poses, compositions, and details required complex prompt structures
+and manual weight adjustments.
+
+Through this process, I experienced limitations in maintaining consistent styles
+and efficiently producing desired results, which led me to explore better AI generation
+workflows and optimization methods.
+
+As generative AI technology continued to evolve, I explored SDXL-based models,
+ComfyUI workflows, and various extensions.
+
+Although ComfyUI provided powerful workflow customization,
+its node-based structure and complex configuration management created a steep learning
+curve during the early stage of my research.
+
+Later, I discovered Stable Diffusion Forge, which allowed SDXL-based models to be used
+with a familiar WebUI environment. This enabled me to continue experimenting with
+new models while improving workflow efficiency.
+
+After discovering Illustrious-based models, I experienced improved natural language
+understanding and stronger image expression capabilities, which allowed me to achieve
+more accurate results with simpler prompt structures.
+
+I continued optimizing my AI image generation workflow by analyzing:
+
+- Checkpoint selection
+- LoRA combinations
+- VAE configurations
+- Prompt engineering methods
+- Generation parameter changes
+
+Rather than focusing only on image generation, I applied these workflows to practical
+content production.
+
+I later selected Pixiv as a global illustration platform and analyzed user responses
+and market trends. By identifying a niche with high demand but relatively lower supply,
+I focused on VTuber-related AI illustration content.
+
+Through approximately 1.5 years of continuous production, testing, and improvement,
+I grew the account to more than 4,900 followers and gained experience in applying
+generative AI technology to real-world digital content workflows.
 
 ## Featured Projects
 
