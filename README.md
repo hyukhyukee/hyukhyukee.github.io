@@ -1,4 +1,4 @@
-# Jang Jae-hyeok Portfolio
+# Jang Jae-hyuk Portfolio
 
 [한국어](#한국어) · [English](#english)
 
