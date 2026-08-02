@@ -1,58 +1,82 @@
-# Donghyeon Ryu Portfolio
+# Jang Jae-hyeok Portfolio
 
 [한국어](#한국어) · [English](#english)
 
 ## 한국어
 
-AI, 데이터, 산업안전 문제를 서비스 구조로 풀어낸 개인 포트폴리오입니다.  
-메인 포트폴리오, 프로젝트 상세 페이지, 이력서 페이지, PDF 이력서를 포함합니다.
+생성형 AI 기반 디지털 콘텐츠 제작 및 AI 이미지 워크플로우 구축 경험을 정리한 개인 포트폴리오입니다.
 
-### 주요 프로젝트
+Stable Diffusion, ComfyUI 등 로컬 AI 환경을 활용한 이미지 생성, 프롬프트 엔지니어링, 모델 테스트 및 글로벌 콘텐츠 플랫폼 운영 경험을 포함합니다.
 
-- **SafeFit AI** — 작업 전 안전지식 점검 및 작업자 투입 적합도 판단 보조 시스템
-- **산업현장 PPE 탐지** — YOLO 기반 안전모·안전조끼 착용 여부 탐지 시스템
-- **구독 관리 에이전트** — Discord 봇과 대시보드 기반 구독 관리 서비스
+## 주요 프로젝트
 
-### 구성
+- **AI 기반 디지털 콘텐츠 제작 및 글로벌 플랫폼 운영**
+  - 생성형 AI 기반 일러스트 제작 및 정기 콘텐츠 발행
+  - 글로벌 사용자 대상 콘텐츠 관리 및 커뮤니케이션 경험
+  - Pixiv 팔로워 4,900명 이상 성장 및 작품 데이터 분석 기반 운영
 
-- `index.html` — 메인 포트폴리오
-- `projects/index.html` — 프로젝트 상세 페이지
-- `resume/index.html` — 이력서 페이지
-- `resume/resume.pdf` — 다운로드용 PDF 이력서
+- **로컬 AI 이미지 생성 Pipeline 구축**
+  - Stable Diffusion WebUI Forge 및 ComfyUI 기반 생성 환경 구축
+  - Checkpoint, LoRA, VAE 조합 테스트 및 결과 분석
+  - RTX 5060 Ti GPU 환경 기반 로컬 AI 워크플로우 최적화
 
-### 기술 스택
+- **AI 콘텐츠 제작 Workflow 최적화**
+  - 반복 생성 작업 효율화를 위한 Batch 생성 및 이미지 관리 환경 구성
+  - 최신 이미지·비디오 생성 모델 테스트 및 활용
+  - 프롬프트 개선을 통한 결과물 품질 최적화
 
-- Python, FastAPI, Streamlit
-- YOLO, OpenAI API, RAG, Data Analysis
-- React, PostgreSQL, Plotly, Pydeck
-- GitHub Pages
+## 구성
+
+- `index.html` — 메인 포트폴리오 페이지
+- `assets/` — CSS, JavaScript, 이미지 리소스
+- `en/` — 영문 페이지 (선택)
+
+## 기술 스택
+
+- Stable Diffusion
+- ComfyUI
+- SD WebUI Forge
+- Generative AI Workflow
+- Prompt Engineering
+- LoRA / Checkpoint / VAE Management
+- AI Content Production
+
+---
 
 ## English
 
-Personal portfolio focused on AI, data, and industrial safety service projects.  
-It includes a main portfolio page, project detail pages, a resume page, and a downloadable PDF resume.
+Personal portfolio showcasing experience in generative AI content creation, AI image workflows, and digital content production.
 
-### Featured Projects
+This portfolio includes projects involving Stable Diffusion, ComfyUI, prompt engineering, local AI environment optimization, and global creator platform management.
 
-- **SafeFit AI** — AI-assisted pre-work safety knowledge check and worker assignment readiness support system
-- **Industrial Site PPE Detection** — YOLO-based safety helmet and vest detection system
-- **Subscription Management Agent** — Discord bot and dashboard for subscription tracking
+## Featured Projects
 
-### Structure
+- **AI Digital Content Creation & Global Platform Operation**
+  - Created and published generative AI-based digital illustrations
+  - Managed content distribution and communication with a global audience
+  - Grew an illustration portfolio to 4,900+ followers through consistent production and analysis
 
-- `index.html` — main portfolio
-- `projects/index.html` — project details
-- `resume/index.html` — resume page
-- `resume/resume.pdf` — downloadable resume
+- **Local AI Image Generation Pipeline**
+  - Built and optimized Stable Diffusion WebUI Forge and ComfyUI environments
+  - Tested LoRA, Checkpoints, VAEs, and prompt optimization methods
+  - Operated a local AI workflow using RTX 5060 Ti GPU resources
 
-### Tech Stack
+- **AI Content Workflow Optimization**
+  - Designed efficient batch generation and asset management workflows
+  - Explored image and video generation models
+  - Improved output quality through prompt refinement
 
-- Python, FastAPI, Streamlit
-- YOLO, OpenAI API, RAG, Data Analysis
-- React, PostgreSQL, Plotly, Pydeck
-- GitHub Pages
+## Tech Stack
+
+- Stable Diffusion
+- ComfyUI
+- SD WebUI Forge
+- Generative AI Workflow
+- Prompt Engineering
+- LoRA / Checkpoint / VAE
+- Digital Content Production
 
 ## Links
 
-- Portfolio: https://ryugpt1.github.io
-- GitHub: https://github.com/RyuGPT1
+- Portfolio:  (https://hyukhyukee.github.io/index.html#projects)
+- GitHub: (https://github.com/hyukhyukee/hyukhyukee.github.io)
