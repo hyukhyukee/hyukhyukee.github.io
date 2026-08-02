@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Donghyeon Ryu</title>
+  <meta name="description" content="Donghyeon Ryu portfolio projects.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260717b">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html">Donghyeon Ryu</a>
+      <div class="header-controls">
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#skills">Skills</a>
+          <a href="../index.html#projects" class="active">Projects</a>
+          <a href="../index.html#experience">Experience</a>
+        </nav>
+        <div class="language-switch" aria-label="언어 선택">
+          <a class="active" href="./index.html" data-language-base="./index.html" lang="ko" aria-current="page">KO</a>
+          <a href="../en/projects/index.html" data-language-base="../en/projects/index.html" lang="en">EN</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-detail-hero">
+      <div class="container">
+        <p class="eyebrow">PROJECTS</p>
+        <h1>Projects</h1>
+        <p>프로젝트를 선택하면 아래에 상세 내용 표시</p>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <div class="container">
+        <div class="project-selector" role="tablist" aria-label="Project selector">
+          <button class="project-tab theme-safefit active" type="button" data-project-tab="safefit" role="tab" aria-selected="true">
+            <strong>SafeFit AI</strong>
+            <span>Hybrid AI 추천·검증·채점 파이프라인 기반 산업안전 서비스</span>
+          </button>
+          <button class="project-tab theme-ppe" type="button" data-project-tab="ppe" role="tab" aria-selected="false">
+            <strong>산업현장 PPE 탐지</strong>
+            <span>YOLO 기반 안전모-안전조끼 착용 여부 탐지 시스템</span>
+          </button>
+          <button class="project-tab theme-subscribe" type="button" data-project-tab="subscribe" role="tab" aria-selected="false">
+            <strong>구독 관리 에이전트</strong>
+            <span>Discord 봇과 대시보드로 구독 정보를 관리하는 AI 서비스</span>
+          </button>
+        </div>
+
+        <article class="project-panel theme-safefit active" data-project-panel="safefit" id="safefit" role="tabpanel">
+          <div class="project-panel-head">
+            <div>
+              <p class="eyebrow">2026 - AI SAFETY SERVICE</p>
+              <h2>SafeFit AI</h2>
+              <p>LLM의 문맥 이해와 규칙 기반 검색·검증·채점을 결합한 Human-in-the-loop 산업안전 서비스</p>
+            </div>
+            <a class="panel-link" href="https://github.com/RyuGPT1/SafeFit_AI" target="_blank" rel="noopener">GitHub</a>
+          </div>
+
+          <div class="project-phase-list">
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>1</span>LLM과 규칙 엔진의 역할을 분리한 Hybrid AI</h3>
+                <h4>문맥 분석 파이프라인</h4>
+                <ul>
+                  <li>자연어 작업 내용을 OpenAI Responses API의 <strong>Strict JSON Schema</strong>로 분석해 허용된 작업·위험 태그만 추출</li>
+                  <li>별칭 매핑, 태그 정규화·중복 제거와 fallback을 서버에서 수행해 LLM 출력의 변동성을 제어</li>
+                  <li>토큰·비용·응답 시간·성공 여부를 호출 단위로 기록하고 동일 보고서는 캐시해 운영 비용을 추적</li>
+                </ul>
+                <h4>나의 설계 포인트</h4>
+                <ul>
+                  <li>모호한 자연어 해석은 LLM, 반복 가능해야 하는 검색·점수·판정은 규칙 엔진으로 분리</li>
+                  <li>AI가 결론을 내리지 않고 관리자에게 근거와 후보를 제공하는 Human-in-the-loop 흐름으로 설계</li>
+                </ul>
+              </div>
+              <figure class="project-visual project-visual-wide">
+                <img src="../assets/img/projects/safefit-ai-architecture.png" alt="SafeFit AI의 AI 활용 구조와 역할 구분">
+                <figcaption>분석·추천·수정·요약은 AI가 보조하고 승인·출제·투입 판단은 관리자가 수행하는 역할 분리</figcaption>
+              </figure>
+            </section>
+
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>2</span>규칙 랭킹과 LLM 재정렬을 결합한 문제 추천</h3>
+                <h4>초기 문제 세트 구성</h4>
+                <ul>
+                  <li>카테고리 우선순위, 태그 겹침, 검토 상태에 가점을 주고 일반적 표현·짧은 답·중복에는 품질 패널티 적용</li>
+                  <li>복합 작업은 카테고리별 대표 문항을 먼저 배치한 뒤 점수순으로 채워 주제 편중을 방지</li>
+                  <li>OX 정답 패턴은 교차 배치하고 동일 문항과 유사 태그의 연속 노출을 줄여 세트 다양성을 확보</li>
+                </ul>
+                <h4>사유 기반 교체 랭킹</h4>
+                <ul>
+                  <li>카테고리·태그·관리자 사유·문항 유형·난이도·검토 상태를 합산하고 중복 후보에는 감점</li>
+                  <li>규칙 상위 12개만 LLM이 사유 적합도로 재정렬하며, 선택·반려 태그 이력으로 다음 후보 점수를 보정</li>
+                </ul>
+              </div>
+              <figure class="project-visual project-visual-wide">
+                <img src="../assets/img/projects/safefit-ranking-algorithm.png" alt="관리자 사유 기반 문제 교체 추천 알고리즘">
+                <figcaption>관리자 교체 사유를 정량화해 기존 문제은행 후보를 우선 추천하고 부족할 때만 AI 생성을 제안</figcaption>
+              </figure>
+            </section>
+
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>3</span>안전 근거 검색과 자동 검증을 반복하는 수정 루프</h3>
+                <h4>Evidence-grounded RAG</h4>
+                <ul>
+                  <li>문항 태그·관리자 오류 사유·최근 반려 사유를 검색어로 조합해 KOSHA 사고사례와 산업안전 법령을 검색</li>
+                  <li>검색어 일치도, 제목 일치도, 핵심 구문 일치도를 점수화하고 KOSHA와 법령 근거가 모두 있을 때만 수정 진행</li>
+                  <li>검색 근거를 프롬프트에 함께 전달해 원문과 동떨어진 생성 결과를 줄임</li>
+                </ul>
+                <h4>검증·승인 루프</h4>
+                <ul>
+                  <li>선택지 수·정답 존재·중복·해설 길이·태그·근거 겹침을 자동 검사하고 오류를 다음 요청에 넣어 최대 2회 재생성</li>
+                  <li>관리자가 승인한 수정만 문제은행에 반영하고 반려 이유는 SQLite에 누적해 다음 검색과 제안에 재사용</li>
+                </ul>
+              </div>
+              <figure class="project-visual project-visual-wide">
+                <img src="../assets/img/projects/safefit-feedback-loop.png" alt="관리자 피드백 기반 문제 수정 알고리즘">
+                <figcaption>오류 접수부터 근거 검색, 수정안 자동 검증, 관리자 승인·반려와 이력 재사용까지 이어지는 루프</figcaption>
+              </figure>
+            </section>
+
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>4</span>설명 가능한 채점과 운영 가능한 Full-stack 구현</h3>
+                <h4>채점·취약 영역 알고리즘</h4>
+                <ul>
+                  <li>빈도와 우선순위로 실제 채점 태그를 최대 20개까지 정규화하고 문항별 점수를 태그 단위로 집계</li>
+                  <li>최종 점수는 화면에 노출된 태그 점수의 산술평균으로 계산해 작업자와 관리자가 같은 기준을 확인</li>
+                  <li>노출 수, 오답 수·비율, 고위험 오답과 태그 평균을 조합해 취약 태그 상위 5개를 도출</li>
+                </ul>
+                <h4>구현 범위</h4>
+                <ul>
+                  <li>React·TypeScript 역할별 화면부터 FastAPI API, SQLite 상태 모델, AI 사용량 로깅까지 혼자 연결</li>
+                  <li>작업 등록 → 문제 검토 → 모바일 응시 → 결과 분석 → 관리자 판단의 전체 서비스 흐름 구현</li>
+                </ul>
+                <div class="chip-row small"><span>React</span><span>TypeScript</span><span>FastAPI</span><span>SQLite</span><span>OpenAI API</span><span>KOSHA API</span></div>
+              </div>
+              <figure class="project-visual">
+                <img src="../assets/img/projects/safefit-admin-dashboard.png" alt="SafeFit AI 관리자 대시보드">
+                <figcaption>태그별 점수, 고위험 오답, 응시 이력과 관리자 판단 보조 리포트를 한 화면에 연결한 대시보드</figcaption>
+              </figure>
+            </section>
+          </div>
+        </article>
+
+        <article class="project-panel theme-ppe" data-project-panel="ppe" id="ppe" role="tabpanel">
+          <div class="project-panel-head">
+            <div>
+              <p class="eyebrow">2026 - COMPUTER VISION</p>
+              <h2>산업현장 PPE 탐지</h2>
+              <p>산업현장 이미지에서 안전모와 안전조끼 착용 여부를 탐지하는 YOLO 기반 시스템</p>
+            </div>
+            <a class="panel-link" href="https://github.com/RyuGPT1/minipr1_7" target="_blank" rel="noopener">GitHub</a>
+          </div>
+
+          <div class="project-phase-list">
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>1</span>현장 안전 문제 정의</h3>
+                <h4>문제 배경</h4>
+                <ul>
+                  <li>안전모와 안전조끼 착용 여부는 반복 확인이 필요하지만 육안 점검은 누락 가능성이 있음</li>
+                  <li>CCTV가 있어도 미착용 상태를 자동 판별하지 못하면 사후 확인에 그칠 수 있음</li>
+                  <li>작업자 단위로 보호구 미착용 상태를 정리하는 탐지 흐름이 필요</li>
+                </ul>
+                <h4>탐지 클래스</h4>
+                <ul>
+                  <li>Hardhat, NO-Hardhat, Safety Vest, NO-Safety Vest, Person 5개 클래스로 구성</li>
+                </ul>
+              </div>
+              <figure class="project-visual">
+                <img src="../assets/img/projects/ppe-interface.jpg" alt="산업현장 PPE 탐지 시스템 인터페이스">
+                <figcaption>이미지-동영상-웹캠 입력을 한 화면에서 처리하는 PPE 탐지 시스템 인터페이스</figcaption>
+              </figure>
+            </section>
+
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>2</span>YOLO 추론과 후처리 설계</h3>
+                <h4>구현 방식</h4>
+                <ul>
+                  <li>YOLO 모델로 Person, Hardhat, NO-Hardhat, Safety Vest, NO-Safety Vest 감지</li>
+                  <li>사람 박스 기준으로 헬멧은 상단, 조끼는 몸통 영역의 박스만 상태 후보로 사용</li>
+                  <li>착용/미착용 박스가 겹치면 confidence를 비교해 상태를 정리</li>
+                  <li>조끼 착용 박스는 신뢰도가 낮을 때 색상 기준을 보조로 활용해 오탐을 완화</li>
+                </ul>
+              </div>
+              <div class="phase-note">
+                <strong>핵심 역할</strong>
+                <p>모델 결과를 그대로 보여주지 않고, 안전관리자가 판단하기 쉬운 작업자별 상태로 재구성</p>
+                <ul>
+                  <li>Person 박스 기준으로 보호구 탐지 결과를 작업자별 상태로 묶는 후처리 설계</li>
+                  <li>헬멧은 상단, 조끼는 몸통 영역 중심으로 판단해 오탐을 줄이는 규칙 적용</li>
+                  <li>이미지-영상-웹캠 입력에서 같은 방식으로 결과를 확인하도록 UI 구성</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>3</span>시연 기능과 한계 분석</h3>
+                <h4>구현 기능</h4>
+                <ul>
+                  <li>사진-동영상 업로드와 OpenCV 기반 로컬 웹캠 입력 지원</li>
+                  <li>동영상과 웹캠에서는 ByteTrack으로 작업자 ID와 최근 상태 유지</li>
+                  <li>Gradio UI에서 탐지 결과 이미지와 작업자별 안전장비 상태 표 확인</li>
+                </ul>
+                <h4>한계 및 개선 방향</h4>
+                <ul>
+                  <li>마스크, 일반 점퍼, 원거리 헬멧 등 애매한 객체는 오탐 가능성이 존재</li>
+                  <li>미착용 기록 저장, 알림, 관리자 대시보드, CCTV 연동은 향후 확장 과제</li>
+                </ul>
+              </div>
+              <div class="phase-stack">
+                <h4>Stack</h4>
+                <div class="chip-row small"><span>Python</span><span>Ultralytics YOLO</span><span>OpenCV</span><span>ByteTrack</span><span>Gradio</span></div>
+                <h4>Detection Flow</h4>
+                <ol class="mini-flow">
+                  <li>이미지, 영상, 웹캠 프레임을 입력으로 YOLO 추론 수행</li>
+                  <li>Person, Hardhat, NO-Hardhat, Safety Vest, NO-Safety Vest 감지</li>
+                  <li>ByteTrack과 후처리 규칙으로 작업자별 착용 상태 정리</li>
+                </ol>
+                <h4>Field Point</h4>
+                <p>산업현장 적용 시 실시간 알림, 미착용 이력 저장, CCTV 연동까지 확장 가능</p>
+              </div>
+            </section>
+          </div>
+        </article>
+
+        <article class="project-panel theme-subscribe" data-project-panel="subscribe" id="subscribe" role="tabpanel">
+          <div class="project-panel-head">
+            <div>
+              <p class="eyebrow">2026 - AI AGENT</p>
+              <h2>구독 관리 에이전트</h2>
+              <p>Discord 봇과 Streamlit 대시보드로 구독 정보를 한곳에서 관리하는 AI 서비스</p>
+            </div>
+            <a class="panel-link" href="https://github.com/RyuGPT1/subscribe_service_agent" target="_blank" rel="noopener">GitHub</a>
+          </div>
+
+          <div class="project-phase-list">
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>1</span>문제 정의와 서비스 목표</h3>
+                <h4>문제 배경</h4>
+                <ul>
+                  <li>OTT, 배달 멤버십, AI 서비스 등 월 구독이 늘어나며 갱신일과 총 지출 파악이 어려움</li>
+                  <li>기존 가계부 방식은 정해진 양식에 맞춰 입력해야 해서 지속 사용성이 낮음</li>
+                  <li>등록부터 조회, 요약, 지출 분석까지 이어지는 간단한 관리 흐름이 필요</li>
+                </ul>
+                <h4>서비스 목표</h4>
+                <ul>
+                  <li>Discord 채팅으로 구독을 등록하고 금액-주기-결제일을 구조화해 저장</li>
+                  <li>대시보드에서 월-연 비용, 갱신 임박 항목, 카테고리별 지출을 확인</li>
+                </ul>
+              </div>
+              <figure class="project-visual">
+                <img src="../assets/img/projects/subscribe-preview.jpg" alt="구독 관리 에이전트 Discord 봇 프리뷰">
+                <figcaption>Discord 채팅으로 구독 정보를 등록하고 조회하는 봇 사용 흐름</figcaption>
+              </figure>
+            </section>
+
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>2</span>AI 입력 처리와 백엔드 구조</h3>
+                <h4>구현 방식</h4>
+                <ul>
+                  <li>“넷플릭스 월 15000원 등록해줘” 같은 문장에서 서비스명, 금액, 결제주기를 추출</li>
+                  <li>FastAPI 백엔드가 Discord Bot, SQLite, OpenAI API, Streamlit을 연결</li>
+                  <li>대화 흐름, 정규화, LLM 처리, intent handler를 분리해 확장하기 쉬운 구조로 설계</li>
+                </ul>
+                <h4>핵심 기능</h4>
+                <ul>
+                  <li>구독 추가-수정-해지, 목록 조회, 월 예상 지출 요약, 비싼 구독 TOP 3 제공</li>
+                  <li>서비스별 월 구독비, 카테고리별 비용, 갱신 임박 D-day 카드 구성</li>
+                </ul>
+              </div>
+              <div class="phase-note">
+                <strong>핵심 역할</strong>
+                <p>비정형 채팅 입력을 서비스 데이터로 변환하고, 봇, API, 대시보드가 같은 데이터를 보도록 설계</p>
+                <ul>
+                  <li>자연어 문장에서 서비스명, 금액, 결제주기, 날짜 정보를 추출하는 구조 정의</li>
+                  <li>Discord Bot, FastAPI, SQLite, Streamlit이 동일한 구독 데이터를 공유하도록 연결</li>
+                  <li>조회-요약-수정 기능을 intent 단위로 분리해 확장하기 쉽게 구성</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>3</span>배운 점과 확장 방향</h3>
+                <h4>배운 점</h4>
+                <ul>
+                  <li>생성형 AI를 단순한 답변 도구가 아닌 모호한 사용자의 입력을 구조화하는 인터페이스로 활용</li>
+                  <li>챗봇과 대시보드가 같은 백엔드를 공유하는 서비스 계층 구조를 이해</li>
+                </ul>
+                <h4>향후 개선</h4>
+                <ul>
+                  <li>사용자별 인증과 개인 DB를 분리해 실제 개인 구독 관리 서비스로 확장</li>
+                  <li>갱신 임박 알림과 결제 캘린더 연동으로 결제 전 확인 흐름 강화</li>
+                  <li>월 지출 패턴을 바탕으로 중복 구독, 고정비 증가, 절감 후보를 추천</li>
+                </ul>
+              </div>
+              <div class="phase-stack">
+                <h4>Stack</h4>
+                <div class="chip-row small"><span>Python</span><span>FastAPI</span><span>OpenAI API</span><span>Discord Bot</span><span>Streamlit</span><span>SQLite</span></div>
+                <h4>Service Flow</h4>
+                <ol class="mini-flow">
+                  <li>사용자가 Discord에 구독 정보를 자연어로 입력</li>
+                  <li>OpenAI API가 핵심 필드를 추출하고 FastAPI가 저장</li>
+                  <li>Streamlit 대시보드에서 월 지출, 갱신 임박, 카테고리 비용 확인</li>
+                </ol>
+              </div>
+            </section>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="image-modal" data-image-modal aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project image preview">
+    <button class="image-backdrop" type="button" data-image-close aria-label="Close image preview"></button>
+    <div class="image-dialog">
+      <button class="image-close" type="button" data-image-close aria-label="Close image preview">×</button>
+      <img src="" alt="" data-image-modal-img>
+      <p data-image-modal-caption></p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> Donghyeon Ryu</div>
+  </footer>
+
+  <script src="../assets/js/main.js?v=20260717b"></script>
+</body>
+</html>
