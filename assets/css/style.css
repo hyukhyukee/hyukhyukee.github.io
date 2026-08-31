@@ -816,7 +816,9 @@ section[id] {
 
 .ai-workflow-grid img {
   width: 100%;
-  height: auto;
+  max-height: 360px;
+  object-fit: cover;
+  object-position: center;
   display: block;
   border-radius: var(--radius);
   border: 1px solid var(--border);
